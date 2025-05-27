@@ -17,11 +17,12 @@ classDiagram
         + executar() void
     }
     class Catalogo{
-        - filmes : ...
-        
-        
-        + adicionarFilme(Filme filme) void
-        + removerFilme(String titulo) void
+        - filmes : ArrayList~Filme~
+        + adicionarFilme(Filme filme) boolean
+        + removerFilme(String titulo) boolean
+        + listarFilmesPorAno() List~Filme~
+        + ListarFilmesPorGenero() List~Filme~
+        + ListarFilmesPorTitulo() List~Filme~
     }
     class Filme{
         - titulo : String
