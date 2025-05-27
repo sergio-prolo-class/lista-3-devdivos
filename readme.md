@@ -9,3 +9,32 @@ Dupla: Leticia Helena do Rosário Furlan e Roberto da Silva Espindola.
 ## Lista 3: Diagramas de classe
 
 ---
+
+```mermaid
+classDiagram
+    class Controle{
+        - catalogo : Catalogo
+        + executar() void
+    }
+    class Catalogo{
+        - filmes : ...
+        
+        
+        + adicionarFilme(Filme filme) void
+        + removerFilme(String titulo) void
+    }
+    class Filme{
+        - titulo : String
+        - anoLancamento : int
+        - genero : String
+        + getTitulo()  String
+        + getAnoLancamento() int
+        + getGenero() String
+    }
+    
+    Catalogo <|-- Controle
+    Catalogo *-- Filme
+    
+    
+        
+```
