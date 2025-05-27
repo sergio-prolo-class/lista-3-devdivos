@@ -4,6 +4,8 @@
 package ifsc.poo;
 
 public class App {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public String getGreeting() {
         return "Hello World!";
     }
@@ -11,4 +13,10 @@ public class App {
     public static void main(String[] args) {
 
     }
+=======
+    
+>>>>>>> Stashed changes
+=======
+    
+>>>>>>> Stashed changes
 }
