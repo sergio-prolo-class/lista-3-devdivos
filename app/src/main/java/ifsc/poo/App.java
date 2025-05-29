@@ -3,20 +3,17 @@
  */
 package ifsc.poo;
 
+import ifsc.poo.catalogo.Controle;
+import ifsc.poo.catalogo.Filme;
+
 public class App {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
+        catalogo_testar(); // comente este código para testar o outro pacote.
 
     }
-=======
-    
->>>>>>> Stashed changes
-=======
-    
->>>>>>> Stashed changes
+    public static void catalogo_testar(){
+        Controle controle = new Controle();
+        controle.executar();
+    }
 }

@@ -13,13 +13,19 @@ public class Catalogo {
         this.filmes = new ArrayList<>();
     }
 
-    public boolean adicionarFilme(Filme filme) {
-        if (!this.filmes.contains(filme)) {
-            this.filmes.add(filme);
-            return true;
+
+public boolean adicionarFilme(Filme filme) {
+    for (Filme f : filmes) {
+        if (f.getTitulo().equalsIgnoreCase(filme.getTitulo()) &&
+                f.getAnoLancamento() == filme.getAnoLancamento() &&
+                f.getGenero().equalsIgnoreCase(filme.getGenero())) {
+            return false;
         }
-        return false;
     }
+    filmes.add(filme);
+    return true;
+}
+
 
     public boolean removerFilme(String titulo) {
         return this.filmes.removeIf(filme -> filme.getTitulo().equalsIgnoreCase(titulo));
