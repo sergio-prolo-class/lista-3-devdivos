@@ -29,26 +29,31 @@ Dupla: Leticia Helena do Rosário Furlan e Roberto da Silva Espindola.
 classDiagram
     class Controle{
         - catalogo : Catalogo
+        + Controle()
         + executar() void
     }
     class Catalogo{
         - filmes : ArrayList~Filme~
+        + Catalogo()
         + adicionarFilme(Filme filme) boolean
         + removerFilme(String titulo) boolean
         + listarFilmesPorAno() List~Filme~
-        + ListarFilmesPorGenero() List~Filme~
-        + ListarFilmesPorTitulo() List~Filme~
+        + listarFilmesPorGenero() List~Filme~
+        + listarFilmesPorTitulo() List~Filme~
     }
     class Filme{
         - titulo : String
         - anoLancamento : int
         - genero : String
-        + getTitulo()  String
-        + getAnoLancamento() int
-        + getGenero() String
+        + Filme(titulo: String, anoLancamento: int, genero: String)
     }
     
-    Catalogo <|-- Controle
+    class App{
+        +main(args: String[]) void
+    }
+        
+    Controle <--App
+    Catalogo <-- Controle
     Catalogo *-- Filme
 
 ```

@@ -4,16 +4,12 @@
 package ifsc.poo;
 
 import ifsc.poo.catalogo.Controle;
-import ifsc.poo.catalogo.Filme;
 
 public class App {
 
     public static void main(String[] args) {
-        catalogo_testar(); // comente este código para testar o outro pacote.
-
-    }
-    public static void catalogo_testar(){
         Controle controle = new Controle();
         controle.executar();
     }
+
 }
