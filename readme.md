@@ -55,3 +55,60 @@ classDiagram
     Catalogo *-- Filme
 
 ```
+
+### Pacote 2: Fila de atendimento 
+
+#### Como executar o programa:
+
+- Para rodar o programa basta digitar ```./gradlew run``` no terminal.
+- Insira no terminal a opção desejada do menu e aperte ```Enter``` no teclado.
+
+#### Instruções de uso:
+- Cadastrar cliente: Informe nome, idade, telefone e uma primeira solicitação.
+- Nova solicitação: Escolha um cliente já cadastrado e registre uma nova demanda para ele.
+- Listar telefones: Exibe os telefones de todos os clientes cadastrados.
+- Próximo cliente: Mostra quem é o próximo da fila de atendimento.
+- Próxima demanda: Atende a próxima solicitação da fila.
+- Idades dos clientes atendidos: Lista as idades dos clientes que já foram atendidos.
+- Telefones de clientes em espera: Lista os telefones dos clientes que ainda possuem solicitações pendentes.
+
+
+```mermaid
+classDiagram
+    class App {
+        +main(args: String[]) void
+    }
+
+    class Menu {
+        +executar() void
+    }
+
+    class Atendimento {
+        -clientes : ArrayList~Cliente~
+        -solicitacoes : ArrayList~Solicitacao~
+        -clientesAtendidos : ArrayList~Cliente~
+        +adicionarSolicitacao(cliente: Cliente, descricao: String) void
+        +listarTelefones() List~String~
+        +proximoCliente() String
+        +proximaSolicitacao() String
+        +idadesAtendidos() List~Integer~
+        +telefonesEmEspera() List~String~
+        }
+
+    class Cliente {
+        -nome : String
+        -idade : int
+        -numeroTelefone : String
+        }
+
+    class Solicitacao {
+        -cliente : Cliente
+        -descricao : String
+        }
+
+    App --> Menu
+    Menu --> Atendimento
+    Atendimento "1" o-- "*" Cliente
+    Atendimento "1" o-- "*" Solicitacao
+    Solicitacao --> Cliente
+```
