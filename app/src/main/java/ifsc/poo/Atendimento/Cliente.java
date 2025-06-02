@@ -1,24 +1,29 @@
-package ifsc.poo.Atendimento;
+package ifsc.poo.atendimento;
 
 public class Cliente {
 
     private final String nome; 
     private int idade;
-    private String numero_Telefone;
-
-
+    private String numeroTelefone;
 
     //Construtor 
-    public Cliente(String nome, int idade, String numero_Telefone) {
+    public Cliente(String nome, int idade, String numeroTelefone) {
         this.nome = nome;
         this.idade = idade;
-        this.numero_Telefone = numero_Telefone;
+        this.numeroTelefone = numeroTelefone;
     }
 
-    //primeira solicitação - solicita as atribuições 
+    //Getters
+    public String getNome() {
+        return nome;
+    }
 
-    
+    public int getIdade() {
+        return idade;
+    }
 
-    
+    public String getNumeroTelefone() {
+        return numeroTelefone;
+    }    
 
 }

@@ -4,12 +4,18 @@
 package ifsc.poo;
 
 import ifsc.poo.catalogo.Controle;
+import ifsc.poo.atendimento.Menu;
 
 public class App {
 
     public static void main(String[] args) {
-        Controle controle = new Controle();
-        controle.executar();
+        // Para teste do pacote "catalogo" descomente as linhas 13 e 14 
+        // Controle controle = new Controle();
+        // controle.executar();
+
+        // Para teste do pacote "atendimento" descomente as linhas 17 e 18
+        // Menu menu = new Menu();
+        // menu.executar();
     }
 
 }
